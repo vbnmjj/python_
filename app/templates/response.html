@@ -1,0 +1,20 @@
+{% extends "main.html" %}
+<head>
+    <style>
+        th {
+            color: blue;
+        }
+        p{
+            color:black;
+            font-weight: 200;
+        }
+    </style>
+</head>
+{% block mainBody %}
+<p>vpnlist:</p>
+{%for vpn in vpn_list%}
+    <th>{{vpn}}</th>
+    </br>
+{%endfor%}
+{{text}}
+{% endblock mainBody %}

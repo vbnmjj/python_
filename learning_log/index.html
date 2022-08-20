@@ -1,0 +1,58 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Django learn</title>  
+</head>
+
+<body>
+    <!-- 注意以下父模板的放置位置-->
+{% extends "base.html" %}
+
+
+{% block mainBody %}
+{# 变量 #}
+<p>{{name}}</p>
+{# 列表 #}
+<P>{{views_list}}</P>
+<P>{{views_list.0}}</P>   <!-- 这里对列表元素的引用， 采用和字典一样的点属性法-->
+{# 字典 #}
+<p>{{ views_dic}}</p>
+<P>{{views_dic.name }} {{views_dic.age}}</P>    <!-- 一个{{name}}内只能引用一个变量 -->
+<p>{{views_dic.age}}</p>
+{# if/else #}
+<P>
+    {% if score >= 95 and score <= 100 %}
+        优秀
+    {% elif score >= 60 and score < 95 %}
+        合格
+    {% else  %}
+        不及格
+    {% endif %}
+</P>
+<P>
+    <!-- for语句-->
+    {% for word in views_list %}
+        {{word}}
+    {% endfor %}
+</P>
+<P>
+    <!--检测是不是空内容-->
+    {% for i in empty_list %}
+    {{i}}
+    {% empty %}
+        <P> 列表为空</P>
+    {%endfor%}
+</P>
+
+<!-- 自定义标签-->
+{% endblock mainBody %}
+
+</body>
+
+</html>
+
+
+
+

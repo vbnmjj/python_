@@ -1,0 +1,9 @@
+{% extends "base.html"%}
+<!--创建子网页-->
+{% block mianBody %}
+<form method="post" action="{%url  network.html%}">
+    <input type="text" placeholder="标题">
+    <textarea cols="50" rows="200"> 输入你的内容 </textarea>
+    <button type="submit">保存</button>
+</form>
+{% endblock mainBody %}

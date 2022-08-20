@@ -1,0 +1,15 @@
+{% extends "main.html" %}
+
+{%block mainBody %}
+<h1 >{{user}} ---{{say_hello}}</h1>
+{% if say_hello == "hello" %}
+    <h3>please input your blog</h3>
+{%else%}
+    <a href="../login">log in again</a> or 
+    <a href="../register">register a account</a>
+{%endif%}
+<form action="../write/" method="post" name="text">
+    <textarea value="写下你的想法吧" cols="100" rows="20" name="text">写下你的想法</textarea>
+    <input type="submit" value="保存" >
+</form>-
+{% endblock mainBody %} 

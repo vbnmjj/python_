@@ -1,0 +1,14 @@
+{% extends "main.html" %}
+{% block mainBody %}
+    <body>
+    
+    <h1 >hello ,start login  </h1>
+    <h1 >{{user}} ---{{say_hello}}</h1>
+    <form method="post" action="{%url 'login'%}">
+        <input type="text" placeholder="请输入用户名" name="user">
+        <input type="password" placeholder="请输入密码" name="passwd">
+       <h1>登录<button type="submit" >登录一下</button>  </h1>
+
+    </form>
+    </body>
+{% endblock mainBody %}

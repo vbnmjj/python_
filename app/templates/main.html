@@ -1,0 +1,92 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>{{title}} </title>
+    </head>
+    <body>
+        <!--  这是写导航的地方-->
+        <p> <h2>h e l l o &nbsp; &nbsp; b o y t h i s &nbsp; &nbsp;  i s &nbsp; &nbsp; a &nbsp; &nbsp; n o t e &nbsp; &nbsp;  s i t e</h2>  </p>  
+        <h2 > 这是最初的页面<img align="right" src="{% static 'img/1.png' %}" alt="对不起 图片没有找到" width="800" height="500" title="效果图"> </h2>
+        <h3>导航链接：
+            <a href="../../index" target="">index</a> &nbsp;
+            <a href="../../learning_logs/" target="">notes</a> &nbsp;
+        </h3>
+
+
+
+
+        
+        {% block mainBody %}
+        <!--下面就要开始作一些form了-->
+        <!-- form  form -->
+        <form action="login" method="get" target="blank">
+        <table>
+            <tr>
+                <td>
+                    名字
+                    <input type="text" >
+                </td>
+                <td>
+                    性别
+                    <input type="text" >
+                </td>
+                <td>
+                    年龄
+                    <input type="text" >
+                </td>
+                <td>
+                    <input type="button" value="验证" onclick="alert('开始验证')">
+                </td>
+            </tr>
+
+            <tr>
+                <td>
+                    q&nbspq&nbsp&nbsp&nbsp          
+                    <input type="text" >
+                </td>
+                <td>
+                    微信
+                    <input type="text" >
+                </td>
+                <td>
+                    号码
+                    <input type="text" >
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    学校
+                    <input type="text">
+                </td>
+                <td>
+                    住址
+                    <input type="text">
+                </td>
+                <td>
+                    专业
+                    <input type="text">
+                </td>
+            </tr> 
+            <tr>
+                <td>
+                    <input type="radio" name="agree">同意
+                </td>
+                <td>
+                    <input type="radio" name="agree">不同意
+                </td>
+                <td>
+                    <input type="submit" value="登录">
+                </td>
+            </tr>
+            <tr>
+                <textarea value="写下你的想法吧" cols="100" rows="20" ></textarea>
+            </tr>
+        </table> 
+        </form>
+
+        <p> <a href="response.html">get_vpn</a></p>
+    {% endblock mainBody%}
+    </body>
+</html>

@@ -1,0 +1,71 @@
+
+{% extends "base.html" %}
+{% block mainBody %}
+{% load static %}
+<head>
+   <style>
+      body {background-image:url("../../statics/network-back.png");
+         background-size:1908px 1104.58px ;  
+      }
+      h1 {
+         color:rgb(226, 143, 19);
+         text-align:center;
+      }
+      
+      h2{color:rgb(191, 27, 206);font-size:20px;}
+
+      p {
+         font-family:"Times New Roman";
+         font-size:20px;
+         color: rgb(191, 27, 206);
+      }
+      ul li{
+         background-image:url(sqpurple.gif);
+         background-repeat:no-repeat;
+         background-position:0px 5px; 
+         padding-left:14px;
+         color:blueviolet;
+      }
+      .head{
+         background-color:rgb(187, 143, 62);
+         text-align:center;
+         padding:0px;
+      }
+      .column{
+         float:left;
+         width:50%;
+         color:rgb(222, 8, 241);
+      }
+    
+      </style>
+</head>
+<body>
+<P> 这是一个computer network 开始，记录自己的开始  {{blogs}}</P>
+
+<div class="head"><h1 style="text-shadow:2px 2px #766085">网络编程的书籍:</h1> </div>
+
+
+<div class="column"><iframe src="{% static 'Python网络编程攻略.pdf' %}" width=100% height="850"></iframe> </div>
+<div class="column">
+   <!--topic提交 -->
+   <div  class="column">
+   <form  action="{% url 'network'%}" method="post">
+      <input type="text" placeholder="请输入标题" name="title">
+      <textarea cols="60" rows="50" color="red" name="text"></textarea>
+      <button type="submit" >提交保存</button> 
+   </form>
+   </div>
+   <!--blogs列表-->
+   <div>
+         {% for bl in blog %}
+         <li>{{bl.created_time}} {{bl.title.title}} </li>
+         <p>{{bl.text}}</p>
+         <h2>----->end end end <---------</h2>
+         {% endfor %}
+   
+      <h2>----->end end end <---------</h2>
+   </div>
+</div>
+
+</body>
+{% endblock mainBody %}

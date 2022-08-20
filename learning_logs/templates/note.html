@@ -1,0 +1,80 @@
+{% extends 'base.html' %}
+
+
+
+{% block mainBody %}
+{%load static%}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{{title}}</title>  
+    <style>
+    body{background-image:url("{% static 'notes-back.jpg'%}"); }
+    h1{
+        text-align:center;
+        color:rgb(250, 8, 177);
+    }
+    /*链接的控制*/
+    a:link {color:#ec0b5d;}      /* 未访问链接*/
+    a:visited {color:#b60beb;}  /* 已访问链接 */
+    a:hover {color:#02030f;}  /* 鼠标移动到链接上 */
+
+    .links{
+        text-align: center;
+    }
+    /*对p单独设置-----id的形式*/
+    #p1{
+        color: #e8f0ec;      /*设置颜色*/
+        text-decoration: overline;/*设置文字的下划线，上划线，贯穿线*/
+        font-size:20px;    /*设置字体大小*/
+        font-weight: 200;     /*设置字体笔画的粗细*/
+    }
+    p{
+        color:#e8f0ec
+    }
+
+    </style>
+</head>
+
+<body>
+<P  > 欢迎你来阿，别太着急，一点点努力！！！</P>
+<p >
+    作者:FHJ &nbsp; &nbsp; 欢迎收藏网址，不定时的更新网络安全,前端内容
+</p>
+<h1 style="text-shadow:2px 2px #004aeb" >下面是乱七八糟的笔记:</h1>
+<!--自己的笔记链接--> 
+<div class="links">
+<p id="p1">
+→→笔&nbsp;记&nbsp;链&nbsp;接:←←
+<h3><a href="network" target="blank">network</a></h3>
+</p>
+</br>
+</br>
+<!--壁纸网址https://docs.djangoproject.com/en/4.0/intro/install/-->
+<p id="p1">
+→→壁&nbsp;纸&nbsp;链&nbsp;接:←←
+<h3><a href="https://wallhaven.cc" target="blank">wallheaven</a>
+</p></br></br>
+<p id="p1">→→工&nbsp;具&nbsp;链&nbsp;接:←← </p>
+
+<h3> <a href="https://docs.djangoproject.com/" target="blank">Django-project-teach</a></h3>
+    </br>
+     <a href="http://tools.jb51.net/" target="blank">工具脚本</a>
+    
+</h3>
+
+   
+</div >
+
+
+{% endblock mainBody %}
+</body>
+</html>
+
+
+
+
+
+
+
